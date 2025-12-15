@@ -2,6 +2,7 @@
 
 // Include our signature generator
 #include "c_signature_generator.h"
+#include "n_utils.h"
 
 struct s_signature_find_settings{
   bool silent             = true;   // Output information
@@ -50,7 +51,7 @@ namespace n_signature{
 
     while(true){
 #if IDA_SDK_VERSION >= 900
-      addr = bin_search3(addr + 1, ea_max, sig_data, BIN_SEARCH_NOCASE | BIN_SEARCH_FORWARD);
+      addr = bin_search(addr + 1, ea_max, sig_data, BIN_SEARCH_NOCASE | BIN_SEARCH_FORWARD);
 #else
       addr = find_binary(addr + 1, ea_max, signature.c_str(), 16, SEARCH_DOWN);
 #endif

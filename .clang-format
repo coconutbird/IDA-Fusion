@@ -1,0 +1,13 @@
+﻿BasedOnStyle: LLVM
+AlignAfterOpenBracket: DontAlign
+AllowShortBlocksOnASingleLine: Empty
+AllowShortFunctionsOnASingleLine: Empty
+AllowShortIfStatementsOnASingleLine: WithoutElse
+BinPackArguments: false
+BinPackParameters: OnePerLine
+BreakBeforeBinaryOperators: All
+BreakBeforeBraces: Attach
+ColumnLimit: 100
+KeepEmptyLinesAtTheStartOfBlocks: false
+PointerAlignment: Left
+SpaceAfterCStyleCast: true

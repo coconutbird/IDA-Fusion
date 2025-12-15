@@ -33,14 +33,14 @@ namespace n_utils{
     CloseClipboard();
   }
 
-  inline std::string format(i8* fmt, ...) {
-    i8 buffer[1024];
-  
+  inline std::string format(const char* fmt, ...) {
+    char buffer[1024];
+
     va_list args;
     va_start(args, fmt);
     vsnprintf(buffer, 1024, fmt, args);
     va_end(args);
-  
+
     return std::string(buffer);
   }
 };

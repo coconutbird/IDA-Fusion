@@ -1,3 +1,103 @@
+# CMake build directories
+cmake-build-*/
+build/
+out/
+
+# CMake files
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+install_manifest.txt
+CTestTestfile.cmake
+Testing/
+*.ninja
+build.ninja
+.ninja_deps
+.ninja_log
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
 *.dll
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Visual Studio / Visual Studio Code
+.vs/
+.vscode/
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+*.sln
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# JetBrains IDEs (CLion, etc.)
+.idea/
+*.iml
+
+# Qt Creator
+*.pro.user
+*.pro.user.*
+CMakeLists.txt.user*
+
+# Temporary files
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Debug files
+*.dSYM/
+*.su
+*.idb
+*.pdb
+
+# IDA Pro specific
+*.i64
+*.idb
+*.id0
+*.id1
+*.id2
+*.nam
+*.til
+
+# Backup files
+*.bak
+*.backup
+
+# Log files
+*.log
+
+# Archives
 *.zip
-sdk
+*.tar
+*.tar.gz
+*.rar
+*.7z
+
+# SDK and dependencies
+sdk/
+dependencies/
