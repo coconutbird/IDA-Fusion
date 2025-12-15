@@ -26,12 +26,18 @@ target_include_directories(IDA_Fusion PRIVATE
     ${IDASDK_INCLUDE_DIRS}
 )
 
-# Preprocessor definitions for Windows x64
+# Preprocessor definitions
 target_compile_definitions(IDA_Fusion PRIVATE
     __NT__
-    __X64__
     __IDP__
 )
+
+# Add architecture-specific definitions
+if(CMAKE_SIZEOF_VOID_P EQUAL 8)
+    target_compile_definitions(IDA_Fusion PRIVATE __X64__ __EA64__)
+else()
+    target_compile_definitions(IDA_Fusion PRIVATE __EA32__)
+endif()
 
 # Link libraries
 if(IDASDK_LIBRARIES)
