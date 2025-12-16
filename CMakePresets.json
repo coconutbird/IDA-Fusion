@@ -10,52 +10,64 @@
       "name": "x64-debug",
       "displayName": "x64 Debug",
       "description": "Build for Windows x64 (64-bit) - Debug",
-      "binaryDir": "${sourceDir}/cmake-build-x64-debug",
+      "binaryDir": "${sourceDir}/build/x64-debug/_build",
+      "architecture": {
+        "value": "x64",
+        "strategy": "set"
+      },
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Debug",
-        "CMAKE_TOOLCHAIN_FILE": {
-          "type": "FILEPATH",
-          "value": "${sourceDir}/cmake/toolchain-x64.cmake"
-        }
+        "CMAKE_RUNTIME_OUTPUT_DIRECTORY": "${sourceDir}/build/x64-debug",
+        "CMAKE_LIBRARY_OUTPUT_DIRECTORY": "${sourceDir}/build/x64-debug",
+        "CMAKE_ARCHIVE_OUTPUT_DIRECTORY": "${sourceDir}/build/x64-debug"
       }
     },
     {
       "name": "x64-release",
       "displayName": "x64 Release",
       "description": "Build for Windows x64 (64-bit) - Release",
-      "binaryDir": "${sourceDir}/cmake-build-x64-release",
+      "binaryDir": "${sourceDir}/build/x64-release/_build",
+      "architecture": {
+        "value": "x64",
+        "strategy": "set"
+      },
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Release",
-        "CMAKE_TOOLCHAIN_FILE": {
-          "type": "FILEPATH",
-          "value": "${sourceDir}/cmake/toolchain-x64.cmake"
-        }
+        "CMAKE_RUNTIME_OUTPUT_DIRECTORY": "${sourceDir}/build/x64-release",
+        "CMAKE_LIBRARY_OUTPUT_DIRECTORY": "${sourceDir}/build/x64-release",
+        "CMAKE_ARCHIVE_OUTPUT_DIRECTORY": "${sourceDir}/build/x64-release"
       }
     },
     {
       "name": "x86-debug",
       "displayName": "x86 Debug",
       "description": "Build for Windows x86 (32-bit) - Debug",
-      "binaryDir": "${sourceDir}/cmake-build-x86-debug",
+      "binaryDir": "${sourceDir}/build/x86-debug/_build",
+      "architecture": {
+        "value": "Win32",
+        "strategy": "set"
+      },
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Debug",
-        "CMAKE_TOOLCHAIN_FILE": {
-          "type": "FILEPATH",
-          "value": "${sourceDir}/cmake/toolchain-x86.cmake"
-        }
+        "CMAKE_RUNTIME_OUTPUT_DIRECTORY": "${sourceDir}/build/x86-debug",
+        "CMAKE_LIBRARY_OUTPUT_DIRECTORY": "${sourceDir}/build/x86-debug",
+        "CMAKE_ARCHIVE_OUTPUT_DIRECTORY": "${sourceDir}/build/x86-debug"
       }
     },
     {
       "name": "x86-release",
       "displayName": "x86 Release",
       "description": "Build for Windows x86 (32-bit) - Release",
-      "binaryDir": "${sourceDir}/cmake-build-x86-release",
+      "binaryDir": "${sourceDir}/build/x86-release/_build",
+      "architecture": {
+        "value": "Win32",
+        "strategy": "set"
+      },
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Release",
-        "CMAKE_TOOLCHAIN_FILE": {
-          "type": "FILEPATH",
-          "value": "${sourceDir}/cmake/toolchain-x86.cmake"
-        }
+        "CMAKE_RUNTIME_OUTPUT_DIRECTORY": "${sourceDir}/build/x86-release",
+        "CMAKE_LIBRARY_OUTPUT_DIRECTORY": "${sourceDir}/build/x86-release",
+        "CMAKE_ARCHIVE_OUTPUT_DIRECTORY": "${sourceDir}/build/x86-release"
       }
     }
   ]

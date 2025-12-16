@@ -2,19 +2,19 @@
 
 #include <cstdio>
 #include <cstring>
+#include <regex>
 #include <string>
 #include <windows.h>
-#include <regex>
 
 // Include typedefs
 #include "typedefs.h"
 
 // IDA sdk specific
-#include <pro.h>
-#include <loader.hpp>
-#include <idp.hpp>
-#include <search.hpp>
 #include <bytes.hpp>
+#include <idp.hpp>
+#include <loader.hpp>
+#include <pro.h>
+#include <search.hpp>
 
 // Custom
 #include "n_settings.h"
