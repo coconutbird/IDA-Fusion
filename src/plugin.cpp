@@ -107,7 +107,7 @@ extern "C" plugin_t PLUGIN = {IDP_INTERFACE_VERSION,
     plugin_init,
     nullptr,
     plugin_run,
-    "Fast signature scanner & creator for IDA 7.0+",
+    "Fast signature scanner & creator for IDA 9.0+",
     "https://github.com/coconutbird/IDA-Fusion",
     "Fusion",
     "Ctrl-Alt-S"};
