@@ -9,7 +9,7 @@ A fast and reliable signature scanner and creator plugin for IDA Pro 9.0+.
 - **Fast & Reliable**: Optimized algorithms for efficient signature creation and scanning
 - **Multiple Signature Formats**: Supports CODE style (`\x48\x89`), IDA style (`48 89 ? ?`), CRC-32, and FNV-1a hashes
 - **Smart Wildcarding**: Automatically wildcards immediate values (IMM) in operands, focusing on opcodes only
-- **Anti-RE Resistant**: Effective against binaries with duplicated parts or anti-signature measures
+- **Robust Signatures**: Effective against binaries with duplicated code sections
 - **User-Friendly**: Auto-jumps to matches, clipboard integration, and streamlined workflow
 
 ## How It Works
