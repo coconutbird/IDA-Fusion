@@ -46,10 +46,16 @@ target_include_directories(IDA_Fusion PRIVATE
 )
 
 # Preprocessor definitions
-target_compile_definitions(IDA_Fusion PRIVATE
-        __NT__
-        __IDP__
-)
+target_compile_definitions(IDA_Fusion PRIVATE __IDP__)
+
+# Platform-specific definitions
+if (WIN32)
+    target_compile_definitions(IDA_Fusion PRIVATE __NT__)
+elseif (APPLE)
+    target_compile_definitions(IDA_Fusion PRIVATE __MAC__)
+elseif (UNIX)
+    target_compile_definitions(IDA_Fusion PRIVATE __LINUX__)
+endif ()
 
 # Add architecture-specific definitions
 if (CMAKE_SIZEOF_VOID_P EQUAL 8)
