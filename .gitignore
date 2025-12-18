@@ -100,3 +100,6 @@ Thumbs.db
 # SDK and dependencies
 sdk/
 dependencies/
+
+# Test framework (downloaded)
+tests/doctest.h
