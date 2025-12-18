@@ -127,13 +127,8 @@ find_package_handle_standard_args(IDASDK
 # Export variables
 set(IDASDK_ARCH ${IDA_ARCH})
 
-message(STATUS "IDA SDK Directory: ${IDA_SDK_DIR}")
-message(STATUS "IDA Include Directory: ${IDASDK_INCLUDE_DIRS}")
-message(STATUS "IDA Library Directory: ${IDASDK_LIBRARY_DIRS}")
-message(STATUS "IDA Library: ${IDASDK_LIBRARIES}")
-message(STATUS "IDA Architecture: ${IDASDK_ARCH}")
-message(STATUS "CMAKE_SIZEOF_VOID_P: ${CMAKE_SIZEOF_VOID_P}")
-message(STATUS "IDA_LIB_DIR_NAME: ${IDA_LIB_DIR_NAME}")
+message(STATUS "IDA SDK found: ${IDA_SDK_DIR}")
+message(STATUS "IDA Architecture: ${IDASDK_ARCH}-bit")
 
 mark_as_advanced(
         IDA_SDK_DIR
