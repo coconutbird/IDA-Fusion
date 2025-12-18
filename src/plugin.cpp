@@ -67,7 +67,7 @@ void run_plugin() {
     break;
 
   case 4: {
-    static char pattern[8192];
+    static char pattern[8192] = {};
     if (ask_form("Fusion — Search\n<Signature:A5:8192:100>", &pattern)) {
       find_signature(pattern,
           {.silent = false,

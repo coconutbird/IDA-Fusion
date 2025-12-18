@@ -2,7 +2,14 @@
 
 #include <idp.hpp>
 #include <pro.h>
+
+#ifdef _WIN32
 #include <windows.h>
+#elif defined(__APPLE__)
+#include <cstdlib>
+#elif defined(__linux__)
+#include <cstdlib>
+#endif
 
 namespace fusion::utils {
 /// Get the immediate operand offset for an instruction (where wildcards should start)
@@ -24,10 +31,11 @@ inline std::pair<ea_t, ea_t> get_address_range() {
   return {inf_get_min_ea(), inf_get_max_ea()};
 }
 
-/// Copy text to the Windows clipboard
+/// Copy text to the system clipboard (cross-platform)
 inline bool copy_to_clipboard(const char* text) {
   if (!text) return false;
 
+#ifdef _WIN32
   const size_t len = strlen(text) + 1;
   HGLOBAL mem = GlobalAlloc(GMEM_MOVEABLE, len);
   if (!mem) return false;
@@ -50,5 +58,30 @@ inline bool copy_to_clipboard(const char* text) {
   SetClipboardData(CF_TEXT, mem);
   CloseClipboard();
   return true;
+
+#elif defined(__APPLE__)
+  // Use pbcopy on macOS
+  FILE* pipe = popen("pbcopy", "w");
+  if (!pipe) return false;
+  fputs(text, pipe);
+  pclose(pipe);
+  return true;
+
+#elif defined(__linux__)
+  // Try xclip first, fall back to xsel
+  FILE* pipe = popen("xclip -selection clipboard 2>/dev/null", "w");
+  if (!pipe) {
+    pipe = popen("xsel --clipboard --input 2>/dev/null", "w");
+  }
+  if (!pipe) return false;
+  fputs(text, pipe);
+  pclose(pipe);
+  return true;
+
+#else
+  // Unsupported platform
+  (void) text;
+  return false;
+#endif
 }
 } // namespace fusion::utils
